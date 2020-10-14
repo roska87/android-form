@@ -35,12 +35,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             stPhone = bunConf.getString(getResources().getString(R.string.phone));
             stEmail = bunConf.getString(getResources().getString(R.string.email));
             stDescription = bunConf.getString(getResources().getString(R.string.contact_description));
-        }else{
-            etName = (EditText) findViewById(R.id.etName);
-            etDate = (EditText) findViewById(R.id.etDate);
-            etPhone = (EditText) findViewById(R.id.etPhone);
-            etEmail = (EditText) findViewById(R.id.etEmail);
-            etDescription = (EditText) findViewById(R.id.etDescription);
         }
 
         incializarEditTexts();
