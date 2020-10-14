@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/etNombre"
+        android:id="@+id/etName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margen_predeterminado"
@@ -16,7 +16,7 @@
         android:layout_marginEnd="@dimen/margen_predeterminado"
         android:layout_marginRight="@dimen/margen_predeterminado"
         android:ems="10"
-        android:hint="@string/nombre"
+        android:hint="@string/name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/etTelefono"
+        android:id="@+id/etPhone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margen_predeterminado"
@@ -34,11 +34,11 @@
         android:layout_marginRight="@dimen/margen_predeterminado"
         android:autofillHints=""
         android:ems="10"
-        android:hint="@string/telefono"
+        android:hint="@string/phone"
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etFecha" />
+        app:layout_constraintTop_toBottomOf="@+id/etDate" />
 
     <EditText
         android:id="@+id/etEmail"
@@ -54,11 +54,11 @@
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etTelefono"
+        app:layout_constraintTop_toBottomOf="@+id/etPhone"
         android:autofillHints=""/>
 
     <EditText
-        android:id="@+id/etDescripcion"
+        android:id="@+id/etDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margen_predeterminado"
@@ -68,7 +68,7 @@
         android:layout_marginRight="@dimen/margen_predeterminado"
         android:ems="10"
         android:gravity="start|top"
-        android:hint="@string/descripcion_contacto"
+        android:hint="@string/contact_description"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,7 +76,7 @@
         android:autofillHints=""/>
 
     <Button
-        android:id="@+id/btnSiguiente"
+        android:id="@+id/btnNext"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margen_predeterminado"
@@ -84,14 +84,14 @@
         android:layout_marginEnd="@dimen/margen_predeterminado"
         android:layout_marginRight="@dimen/margen_predeterminado"
         android:layout_marginBottom="16dp"
-        android:text="@string/btnSiguiente"
+        android:text="@string/button_next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/etFecha"
+        android:id="@+id/etDate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margen_predeterminado"
@@ -100,7 +100,7 @@
         android:layout_marginEnd="@dimen/margen_predeterminado"
         android:layout_marginRight="@dimen/margen_predeterminado"
         android:ems="10"
-        android:hint="@string/fecha_nacimiento"
+        android:hint="@string/birth_date"
         android:inputType="date"
         android:focusable="false"
         android:clickable="true"
@@ -108,6 +108,6 @@
         android:autofillHints=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNombre" />
+        app:layout_constraintTop_toBottomOf="@+id/etName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

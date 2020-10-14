@@ -3,7 +3,6 @@ package mx.unam.formapp;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.app.DatePickerDialog;
-import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -15,14 +14,12 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.google.android.material.textfield.TextInputEditText;
-import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText etNombre, etTelefono, etFecha, etEmail, etDescripcion;
-    private String stNombre, stTelefono, stFecha, stEmail, stDescripcion;
-    private Button btnSiguiente;
+    private EditText etName, etPhone, etDate, etEmail, etDescription;
+    private String stName, stPhone, stDate, stEmail, stDescription;
+    private Button btnNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,17 +30,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Bundle bunConf = getIntent().getExtras();
         //Si recibio parametros
         if( bunConf != null ) {
-            stNombre = bunConf.getString(getResources().getString(R.string.nombre));
-            stFecha = bunConf.getString(getResources().getString(R.string.fecha_nacimiento));
-            stTelefono = bunConf.getString(getResources().getString(R.string.telefono));
+            stName = bunConf.getString(getResources().getString(R.string.name));
+            stDate = bunConf.getString(getResources().getString(R.string.birth_date));
+            stPhone = bunConf.getString(getResources().getString(R.string.phone));
             stEmail = bunConf.getString(getResources().getString(R.string.email));
-            stDescripcion = bunConf.getString(getResources().getString(R.string.descripcion_contacto));
+            stDescription = bunConf.getString(getResources().getString(R.string.contact_description));
         }else{
-            etNombre = (EditText) findViewById(R.id.etNombre);
-            etFecha = (EditText) findViewById(R.id.etFecha);
-            etTelefono = (EditText) findViewById(R.id.etTelefono);
+            etName = (EditText) findViewById(R.id.etName);
+            etDate = (EditText) findViewById(R.id.etDate);
+            etPhone = (EditText) findViewById(R.id.etPhone);
             etEmail = (EditText) findViewById(R.id.etEmail);
-            etDescripcion = (EditText) findViewById(R.id.etDescripcion);
+            etDescription = (EditText) findViewById(R.id.etDescription);
         }
 
         incializarEditTexts();
@@ -51,29 +48,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void setDataFromForm(){
-        etNombre.setText(stNombre);
-        etTelefono.setText(stTelefono);
+        etName.setText(stName);
+        etPhone.setText(stPhone);
         etEmail.setText(stEmail);
-        etFecha.setText(stFecha);
-        etDescripcion.setText(stDescripcion);
+        etDate.setText(stDate);
+        etDescription.setText(stDescription);
     }
 
     public void incializarEditTexts(){
-        etNombre   = (EditText) findViewById(R.id.etNombre);
-        etFecha    = (EditText) findViewById(R.id.etFecha);
-        etTelefono = (EditText) findViewById(R.id.etTelefono);
-        etEmail     = (EditText) findViewById(R.id.etEmail);
-        etDescripcion = (EditText) findViewById(R.id.etDescripcion);
-        btnSiguiente = (Button) findViewById(R.id.btnSiguiente);
+        etName = (EditText) findViewById(R.id.etName);
+        etDate = (EditText) findViewById(R.id.etDate);
+        etPhone = (EditText) findViewById(R.id.etPhone);
+        etEmail = (EditText) findViewById(R.id.etEmail);
+        etDescription = (EditText) findViewById(R.id.etDescription);
+        btnNext = (Button) findViewById(R.id.btnNext);
 
-        btnSiguiente.setOnClickListener(this);
-        etFecha.setOnClickListener(this);
+        btnNext.setOnClickListener(this);
+        etDate.setOnClickListener(this);
 
-        this.setOnFocusChangeListener(etNombre);
-        this.setOnFocusChangeListener(etTelefono);
-        this.setOnFocusChangeListener(etFecha);
+        this.setOnFocusChangeListener(etName);
+        this.setOnFocusChangeListener(etPhone);
+        this.setOnFocusChangeListener(etDate);
         this.setOnFocusChangeListener(etEmail);
-        this.setOnFocusChangeListener(etDescripcion);
+        this.setOnFocusChangeListener(etDescription);
     }
 
     private void hideKeyboard(View view) {
@@ -105,41 +102,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.etFecha:
+            case R.id.etDate:
                 showDatePickerDialog();
                 break;
-            case R.id.btnSiguiente:
-                enviarDatos();
+            case R.id.btnNext:
+                sendData();
                 break;
         }
     }
 
     public void getDataFromForm(){
-        stNombre = etNombre.getText().toString();
-        stTelefono = etTelefono.getText().toString();
+        stName = etName.getText().toString();
+        stPhone = etPhone.getText().toString();
         stEmail = etEmail.getText().toString();
-        stFecha = etFecha.getText().toString();
-        stDescripcion = etDescripcion.getText().toString();
+        stDate = etDate.getText().toString();
+        stDescription = etDescription.getText().toString();
     }
 
-    public void enviarDatos(){
+    public void sendData(){
         //Tomar datos del formulario
         this.getDataFromForm();
-        if( stNombre.length() == 0 || stTelefono .length() == 0 ||
-                stEmail.length() == 0 || stFecha.length() == 0 ||
-                stDescripcion.length() == 0){
+        if( stName.length() == 0 || stPhone.length() == 0 ||
+                stEmail.length() == 0 || stDate.length() == 0 ||
+                stDescription.length() == 0){
             //Mostrar mensaje por formulario incompleto
             Toast.makeText(getApplicationContext(), getResources().getString(R.string.complete_form), Toast.LENGTH_SHORT).show();
         }else{
             // Crear Objeto Bundle
             Bundle bunParam = new Bundle();
-            bunParam.putString(getResources().getString(R.string.nombre),stNombre);
-            bunParam.putString(getResources().getString(R.string.fecha_nacimiento),stFecha);
-            bunParam.putString(getResources().getString(R.string.telefono),stTelefono);
+            bunParam.putString(getResources().getString(R.string.name), stName);
+            bunParam.putString(getResources().getString(R.string.birth_date), stDate);
+            bunParam.putString(getResources().getString(R.string.phone), stPhone);
             bunParam.putString(getResources().getString(R.string.email),stEmail);
-            bunParam.putString(getResources().getString(R.string.descripcion_contacto),stDescripcion);
+            bunParam.putString(getResources().getString(R.string.contact_description), stDescription);
             //instanciar Intent
-            Intent intent = new Intent(MainActivity.this, DatosContacto.class);
+            Intent intent = new Intent(MainActivity.this, ContactDetail.class);
             //Pasar los parametros al intent
             intent.putExtras(bunParam);
             //iniciar la actividad
@@ -154,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 final String selectedDate = day + " / " + (month+1) + " / " + year;
-                etFecha.setText(selectedDate);
+                etDate.setText(selectedDate);
             }
         });
         newFragment.show(getSupportFragmentManager(), "datePicker");

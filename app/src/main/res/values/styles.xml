@@ -7,16 +7,4 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="MiBotonRaised" parent="Theme.AppCompat.Light">
-        <item name="colorButtonNormal">@color/colorAccent</item>
-        <item name="colorControlHighlight">@color/colorBlanco</item>
-        <item name="android:textColor">@color/colorBlanco</item>
-    </style>
-
-    <style name="MiBotonEditar" parent="Theme.AppCompat.Light">
-        <item name="colorButtonNormal">@color/colorAccent</item>
-        <item name="colorControlHighlight">@color/colorBlanco</item>
-        <item name="android:textColor">@color/colorBlanco</item>
-    </style>
-
 </resources>

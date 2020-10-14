@@ -1,25 +1,12 @@
 <resources>
     <string name="app_name">FormApp</string>
-    <string name="name">Nombre</string>
-    <string name="phone">Teléfono</string>
-
-    <string name="contact_description">Descripción del contacto</string>
-    <string name="date_button_set">Seleccionar fecha</string>
-    <string name="date_view_set">Fecha de nacimiento:</string>
-    <string name="date_selected">Fecha de nacimiento</string>
-    <string name="button_next">Siguiente</string>
-    <string name="button_edit">Editar</string>
-    <string name="data_confirmation_title">Confirmar Datos</string>
-    <string name="select_date">Seleccione fecha</string>
-    <string name="complete_form">Complete los datos del formulario!</string>
-
-
-    <string name="nombre">Nombre Completo</string>
-    <string name="telefono">Telefono</string>
+    <string name="name">Nombre Completo</string>
+    <string name="phone">Telefono</string>
     <string name="email">Email</string>
-    <string name="descripcion_contacto">Descripción Contacto</string>
-    <string name="btnSiguiente">Siguiente</string>
-    <string name="fecha_nacimiento">Fecha de Nacimiento</string>
-    <string name="confirmar_dato">Confirmar Datos</string>
-    <string name="editar_datos">Editar Datos</string>
+    <string name="contact_description">Descripción Contacto</string>
+    <string name="button_next">Siguiente</string>
+    <string name="birth_date">Fecha de Nacimiento</string>
+    <string name="confirm">Confirmar Datos</string>
+    <string name="edit">Editar Datos</string>
+    <string name="complete_form">Complete los datos del formulario!</string>
 </resources>
