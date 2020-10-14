@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DatosContacto">
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margen_predeterminado"
+        android:layout_marginLeft="@dimen/margen_predeterminado"
+        android:layout_marginTop="@dimen/margen_predeterminado"
+        android:layout_marginEnd="@dimen/margen_predeterminado"
+        android:layout_marginRight="@dimen/margen_predeterminado"
+        android:text="@string/confirmar_dato"
+        android:textSize="24sp"
+        app:fontFamily="serif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNombreContacto2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margen_predeterminado"
+        android:layout_marginLeft="@dimen/margen_predeterminado"
+
+        android:layout_marginEnd="@dimen/margen_predeterminado"
+        android:layout_marginRight="@dimen/margen_predeterminado"
+        android:text="@string/nombre"
+        app:layout_constraintBottom_toBottomOf="@+id/tvNombreContacto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tvNombreContacto"
+        app:layout_constraintTop_toTopOf="@+id/tvNombreContacto"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/tvNombreContacto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margen_predeterminado"
+        android:layout_marginLeft="@dimen/margen_predeterminado"
+        android:layout_marginTop="28dp"
+        android:text="@string/nombre"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
+
+    <TextView
+        android:id="@+id/tvTelefono2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="@dimen/margen_predeterminado"
+        android:layout_marginRight="@dimen/margen_predeterminado"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="llamarContacto"
+        android:text="@string/telefono"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvNacimiento2"
+        app:layout_constraintTop_toTopOf="@+id/tvTelefono" />
+
+    <TextView
+        android:id="@+id/tvDescripcion2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="@dimen/margen_predeterminado"
+        android:layout_marginRight="@dimen/margen_predeterminado"
+        android:text="@string/descripcion_contacto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvEmail2"
+        app:layout_constraintTop_toTopOf="@+id/tvDescripcion" />
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/email"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvTelefono"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvTelefono"
+        app:layout_constraintTop_toBottomOf="@+id/tvTelefono" />
+
+    <TextView
+        android:id="@+id/tvTelefono"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/telefono"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvNacimiento"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvNacimiento"
+        app:layout_constraintTop_toBottomOf="@+id/tvNacimiento" />
+
+    <TextView
+        android:id="@+id/tvNacimiento"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/fecha_nacimiento"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvNombreContacto"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvNombreContacto"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombreContacto" />
+
+    <TextView
+        android:id="@+id/tvDescripcion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/descripcion_contacto"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEmail"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvEmail"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
+
+    <TextView
+        android:id="@+id/tvEmail2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="@dimen/margen_predeterminado"
+        android:layout_marginRight="@dimen/margen_predeterminado"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="enviarMail"
+        android:text="@string/email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvTelefono2"
+        app:layout_constraintTop_toTopOf="@+id/tvEmail" />
+
+    <TextView
+        android:id="@+id/tvNacimiento2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="@dimen/margen_predeterminado"
+        android:layout_marginRight="@dimen/margen_predeterminado"
+        android:text="@string/fecha_nacimiento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvNombreContacto2"
+        app:layout_constraintTop_toTopOf="@+id/tvNacimiento" />
+
+    <Button
+        android:id="@+id/btnEditarDatos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margen_predeterminado"
+        android:layout_marginLeft="@dimen/margen_predeterminado"
+        android:layout_marginEnd="@dimen/margen_predeterminado"
+        android:layout_marginRight="@dimen/margen_predeterminado"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:text="@string/editar_datos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
